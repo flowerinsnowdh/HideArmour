@@ -40,6 +40,7 @@ processResources
     }
 }
 
+//noinspection ConfigurationAvoidance gradle太莫名其妙了，我怕根据IDEA的提示就会报错，所以直接抑制
 tasks.withType(JavaCompile) {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
