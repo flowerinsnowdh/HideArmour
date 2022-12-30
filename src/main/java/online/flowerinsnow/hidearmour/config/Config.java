@@ -27,11 +27,11 @@ public class Config {
         config.load();
 
         final String category = "configuration";
-        enable = config.get("enable", category, false, "总开关");
-        helmet = config.get("helmet", category, true, "是否隐藏头盔");
-        chestplate = config.get("chestplate", category, true, "是否隐藏胸甲");
-        leggings = config.get("leggings", category, true, "是否隐藏护腿");
-        boots = config.get("boots", category, true, "是否隐藏靴子");
+        enable = config.get(category, "enable", false, "总开关");
+        helmet = config.get(category, "helmet", true, "是否隐藏头盔");
+        chestplate = config.get(category, "chestplate", true, "是否隐藏胸甲");
+        leggings = config.get(category, "leggings", true, "是否隐藏护腿");
+        boots = config.get(category, "boots", true, "是否隐藏靴子");
 
         saveConfig();
     }
