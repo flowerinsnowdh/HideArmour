@@ -28,20 +28,20 @@ public class RenderListener {
         ItemStack[] armorInventory = inventory.armorInventory;
         // 在渲染玩家的数据前，先把玩家的护甲保存起来然后清空
         if (Config.helmet.getBoolean()) {
-            helmet = armorInventory[0];
-            armorInventory[0] = null;
+            helmet = armorInventory[3];
+            armorInventory[3] = null;
         }
         if (Config.chestplate.getBoolean()) {
-            chestplate = armorInventory[1];
-            armorInventory[1] = null;
-        }
-        if (Config.leggings.getBoolean()) {
-            leggings = armorInventory[2];
+            chestplate = armorInventory[2];
             armorInventory[2] = null;
         }
+        if (Config.leggings.getBoolean()) {
+            leggings = armorInventory[1];
+            armorInventory[1] = null;
+        }
         if (Config.boots.getBoolean()) {
-            boots = armorInventory[3];
-            armorInventory[3] = null;
+            boots = armorInventory[0];
+            armorInventory[0] = null;
         }
     }
 
@@ -59,16 +59,16 @@ public class RenderListener {
         ItemStack[] armourInventory = inventory.armorInventory;
         // 在渲染完成玩家后，再将护甲加回来
         if (helmet != null) {
-            armourInventory[0] = helmet;
+            armourInventory[3] = helmet;
         }
         if (chestplate != null) {
-            armourInventory[1] = chestplate;
+            armourInventory[2] = chestplate;
         }
         if (leggings != null) {
-            armourInventory[2] = leggings;
+            armourInventory[1] = leggings;
         }
         if (boots != null) {
-            armourInventory[3] = boots;
+            armourInventory[0] = boots;
         }
         helmet = chestplate = leggings = boots = null;
     }
