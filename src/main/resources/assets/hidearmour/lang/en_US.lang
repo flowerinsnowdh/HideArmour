@@ -6,4 +6,5 @@ hidearmour.status.helmet=§7Hide helmet: %s
 hidearmour.status.chestplate=§7Hide chestplate: %s
 hidearmour.status.leggings=§7Hide leggings: %s
 hidearmour.status.boots=§7Hide boots: %s
-hidearmour.command.usage=/hidearmour <true/false/status>
+hidearmour.command.usage=/hidearmour <true/false/status/reload>
+hidearmour.command.reload=§bReload successful.

@@ -6,4 +6,5 @@ hidearmour.status.helmet=§7cacher le casque: %s
 hidearmour.status.chestplate=§7cacher le plastron: %s
 hidearmour.status.leggings=§7cacher le legging: %s
 hidearmour.status.boots=§7cacher les bottes: %s
-hidearmour.command.usage=/hidearmour <true/false/status>
+hidearmour.command.usage=/hidearmour <true/false/status/reload>
+hidearmour.command.reload=§bRechargement réussi

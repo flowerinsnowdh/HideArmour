@@ -6,4 +6,5 @@ hidearmour.status.helmet=§7спрятать шлем: %s
 hidearmour.status.chestplate=§7спрятать нагрудник: %s
 hidearmour.status.leggings=§7спрятать леггинсы: %s
 hidearmour.status.boots=§7спрятать сапоги: %s
-hidearmour.command.usage=/hidearmour <true/false/status>
+hidearmour.command.usage=/hidearmour <true/false/status/reload>
+hidearmour.command.reload=§bПерезагрузить успешно

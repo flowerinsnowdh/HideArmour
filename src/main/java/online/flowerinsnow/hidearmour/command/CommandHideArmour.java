@@ -41,7 +41,7 @@ public class CommandHideArmour extends CommandBase {
     @Override
     public List<String> addTabCompletionOptions(ICommandSender sender, String[] args, BlockPos pos) {
         if (args.length == 1) {
-            List<String> subCommands = new ArrayList<>(Arrays.asList("true", "false", "status"));
+            List<String> subCommands = new ArrayList<>(Arrays.asList("true", "false", "status", "reload"));
             subCommands.removeIf(s -> !s.toLowerCase().startsWith(args[0].toLowerCase()));
             return subCommands;
         }
@@ -67,6 +67,10 @@ public class CommandHideArmour extends CommandBase {
                     sender.addChatMessage(new ChatComponentTranslation("hidearmour.status.chestplate", booleanText(Config.chestplate.getBoolean())));
                     sender.addChatMessage(new ChatComponentTranslation("hidearmour.status.leggings", booleanText(Config.leggings.getBoolean())));
                     sender.addChatMessage(new ChatComponentTranslation("hidearmour.status.boots", booleanText(Config.boots.getBoolean())));
+                    return;
+                case "reload":
+                    Config.reloadConfig();
+                    sender.addChatMessage(new ChatComponentTranslation("hidearmour.command.reload"));
                     return;
             }
         }
