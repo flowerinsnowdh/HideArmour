@@ -12,3 +12,4 @@
 * `true` - 启用隐藏护甲
 * `false` - 禁用隐藏护甲
 * `status` - 查看本MOD的状态
+* `reload` - 重载
