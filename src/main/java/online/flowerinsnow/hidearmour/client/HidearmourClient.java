@@ -5,7 +5,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import online.flowerinsnow.hidearmour.client.command.CommandHideArmour;
 import online.flowerinsnow.hidearmour.client.config.Config;
-import online.flowerinsnow.hidearmour.client.eci.RenderPlayerEntityCallback;
+import online.flowerinsnow.hidearmour.client.eci.RenderArmourCallback;
 import online.flowerinsnow.hidearmour.client.listener.RenderListener;
 
 import java.io.IOException;
@@ -22,8 +22,6 @@ public class HidearmourClient implements ClientModInitializer {
 
         CommandHideArmour.register();
 
-        RenderListener renderListener = new RenderListener();
-        RenderPlayerEntityCallback.Pre.EVENT.register(renderListener);
-        RenderPlayerEntityCallback.Post.EVENT.register(renderListener);
+        RenderArmourCallback.Pre.EVENT.register(new RenderListener());
     }
 }
