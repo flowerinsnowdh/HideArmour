@@ -14,11 +14,11 @@ import java.io.IOException;
 @Environment(EnvType.CLIENT)
 public class CommandHideArmour {
     public static void register() {
-        //noinspection DataFlowIssue,EqualsBetweenInconvertibleTypes
+        // noinspection DataFlowIssue
         CommandRegistrationCallback.EVENT.register(
                 (dispatcher, registryAccess, environment) -> dispatcher
                         .register(CommandManager.literal("hidearmour")
-                                .requires(source -> source.getEntity().equals(MinecraftClient.getInstance().player.getId()))
+                                .requires(source -> source.getEntity().equals(MinecraftClient.getInstance().player))
                                 .then(CommandManager.literal("true")
                                         .executes(context -> {
                                             Config.getConfig().set("enable", true);
