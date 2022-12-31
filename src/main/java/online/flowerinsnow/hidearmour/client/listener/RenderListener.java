@@ -9,12 +9,23 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.ActionResult;
+import online.flowerinsnow.hidearmour.client.config.Config;
 import online.flowerinsnow.hidearmour.client.eci.RenderArmourCallback;
 
 @Environment(EnvType.CLIENT)
 public class RenderListener implements RenderArmourCallback.Pre {
     @Override
     public ActionResult preRenderArmour(MatrixStack matrices, VertexConsumerProvider vertexConsumers, LivingEntity entity, EquipmentSlot armorSlot, int light, BipedEntityModel<LivingEntity> model) {
-        return entity.equals(MinecraftClient.getInstance().player) ? ActionResult.SUCCESS : ActionResult.PASS;
+        if (!entity.equals(MinecraftClient.getInstance().player) || !Config.getConfig().getBooleanValue("enable")) {
+            return ActionResult.PASS;
+        }
+        boolean hide = false;
+        switch (armorSlot) {
+            case HEAD -> hide = Config.getConfig().getBooleanValue("helmet");
+            case CHEST -> hide = Config.getConfig().getBooleanValue("chestplate");
+            case LEGS -> hide = Config.getConfig().getBooleanValue("leggings");
+            case FEET -> hide = Config.getConfig().getBooleanValue("boots");
+        }
+        return hide ? ActionResult.SUCCESS : ActionResult.PASS;
     }
 }
