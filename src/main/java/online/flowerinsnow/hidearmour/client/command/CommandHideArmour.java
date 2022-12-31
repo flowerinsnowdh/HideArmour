@@ -22,12 +22,22 @@ public class CommandHideArmour {
                                 .then(CommandManager.literal("true")
                                         .executes(context -> {
                                             Config.getConfig().set("enable", true);
+                                            try {
+                                                Config.saveConfig();
+                                            } catch (IOException e) {
+                                                throw new RuntimeException(e);
+                                            }
                                             context.getSource().sendFeedback(Text.translatable("hidearmour.enable"), false);
                                             return 0;
                                         }))
                                 .then(CommandManager.literal("false")
                                         .executes(context -> {
                                             Config.getConfig().set("enable", false);
+                                            try {
+                                                Config.saveConfig();
+                                            } catch (IOException e) {
+                                                throw new RuntimeException(e);
+                                            }
                                             context.getSource().sendFeedback(Text.translatable("hidearmour.disable"), false);
                                             return 0;
                                         }))
