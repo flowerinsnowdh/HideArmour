@@ -1,0 +1,13 @@
+{
+  "hidearmour.gui.config.title": "Hide Armour",
+  "hidearmour.gui.config.true": "§atrue",
+  "hidearmour.gui.config.false": "§cfalse",
+  "hidearmour.gui.config.enable": "启用: %s",
+  "hidearmour.gui.config.helmet": "隐藏头盔: %s",
+  "hidearmour.gui.config.chestplate": "隐藏胸甲: %s",
+  "hidearmour.gui.config.leggings": "隐藏护腿: %s",
+  "hidearmour.gui.config.boots": "隐藏靴子: %s",
+  "hidearmour.gui.config.reload.button": "重新加载",
+  "hidearmour.gui.config.reload.success": "§a重新加载成功",
+  "hidearmour.gui.config.done": "完成"
+}

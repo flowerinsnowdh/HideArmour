@@ -6,7 +6,7 @@
 # 使用方式
 将本 mod 放入 `mods` 目录下，启动游戏
 
-## 1.8.9至1.12.2版本
+## 1.8.9至1.12.2 forge版本
 使用客户端命令`/hidearmour`或`/hidearmor`来操作
 
 - `true` - 启用隐藏护甲
@@ -16,12 +16,9 @@
 
 配置文件位于`.minecraft/config/hidearmour.cfg`
 
-## 1.19.3-fabric版本
-使用客户端命令`/hidearmour`或`/hidearmor`来操作
+## 1.19.3-1.20.1-fabric 版本
+适用版本：[1.19.3, 1.19.4, 1.20, 1.20.1]
 
-- `true` - 启用隐藏护甲
-- `false` - 禁用隐藏护甲
-- `status` - 查看本MOD的状态
-- `reload` - 重载
+安装[Mod Menu](https://modrinth.com/mod/modmenu)，然后在模组列菜单内点击配置
 
-配置文件位于`.minecraft/config/hidearmour.xml`
+配置文件位于`.minecraft/config/hidearmour.conf`

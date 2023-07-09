@@ -1,0 +1,43 @@
+{
+    "schemaVersion": 1,
+    "id": "hidearmour",
+    "version": "${version}",
+    "name": "Hide Armour",
+    "description": "",
+    "authors": [
+        "flowerinsnow"
+    ],
+    "contact": {
+        "repo": "https://github.com/flowerinsnowdh/HideArmour",
+        "issues": "https://github.com/flowerinsnow-lights-opensource/HideArmour/issues"
+    },
+    "license": "GPL-3.0",
+    "icon": "assets/hidearmour/icon.png",
+    "environment": "client",
+    "entrypoints": {
+        "client": [
+            "online.flowerinsnow.hidearmour.client.HideArmourClient"
+        ],
+        "main": [
+        ],
+        "modmenu": [
+            "online.flowerinsnow.hidearmour.client.modmenu.ModMenuImpl"
+        ]
+    },
+    "mixins": [
+        "hidearmour.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.14.10",
+        "fabric": "*",
+        "minecraft": ">=1.19.3 <=1.20.1"
+    },
+    "custom": {
+        "modmenu": {
+            "links": {
+                "modmenu.source": "https://github.com/flowerinsnow-lights-opensource/HideArmour",
+                "modmenu.github_releases": "https://github.com/flowerinsnow-lights-opensource/HideArmour/releases"
+            }
+        }
+    }
+}
