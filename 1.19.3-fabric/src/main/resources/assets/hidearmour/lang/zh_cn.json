@@ -1,0 +1,12 @@
+{
+  "hidearmour.enable": "隐藏护甲已§a启用",
+  "hidearmour.disable": "隐藏护甲已§c禁用",
+  "hidearmour.status.header": "§7===§bMOD §eHideArmour§b的状态§7===",
+  "hidearmour.status.full": "§7启用: %s",
+  "hidearmour.status.helmet": "§7隐藏头盔: %s",
+  "hidearmour.status.chestplate": "§7隐藏胸甲: %s",
+  "hidearmour.status.leggings": "§7隐藏护腿: %s",
+  "hidearmour.status.boots": "§7隐藏靴子: %s",
+  "hidearmour.command.usage": "/hidearmour <true/false/status/reload>",
+  "hidearmour.command.reload": "§b成功重载"
+}
