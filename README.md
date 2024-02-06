@@ -6,7 +6,7 @@ An ultra-lightweight mod that hides own armor on the client side, and can specif
 
 The old MOD had many problems, so I abandoned it and rewrote it directly.
 
-# 使用方式
+# Usage
 Put this mod into the `mods` directory and launch the game
 
 ## 1.8.9-1.12.2-forge
