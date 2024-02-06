@@ -1,6 +1,6 @@
 {
     "schemaVersion": 1,
-    "id": "hidearmour",
+    "id": "hide-armour",
     "version": "${version}",
     "name": "Hide Armour",
     "description": "",
@@ -12,7 +12,7 @@
         "issues": "https://github.com/flowerinsnow-lights-opensource/HideArmour/issues"
     },
     "license": "GPL-3.0",
-    "icon": "assets/hidearmour/icon.png",
+    "icon": "assets/hide-armour/icon.png",
     "environment": "client",
     "entrypoints": {
         "client": [
@@ -25,7 +25,7 @@
         ]
     },
     "mixins": [
-        "hidearmour.mixins.json"
+        "hide-armour.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=0.14.10",

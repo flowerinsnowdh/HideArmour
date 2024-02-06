@@ -1,7 +1,7 @@
 package online.flowerinsnow.hidearmour.client;
 
 import cc.carm.lib.configuration.EasyConfiguration;
-import cc.carm.lib.configuration.hocon.HOCONFileConfigProvider;
+import cc.carm.lib.configuration.core.source.ConfigurationProvider;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -14,10 +14,10 @@ import online.flowerinsnow.hidearmour.client.listener.RenderListener;
 
 @Environment(EnvType.CLIENT)
 public class HideArmourClient implements ClientModInitializer {
-    private static HOCONFileConfigProvider provider;
+    private static ConfigurationProvider<?> provider;
     @Override
     public void onInitializeClient() {
-        provider = EasyConfiguration.from(FabricLoader.getInstance().getConfigDir().resolve("hideamour.conf").toFile());
+        provider = EasyConfiguration.from(FabricLoader.getInstance().getConfigDir().resolve("hideamour.yml").toFile());
         provider.initialize(Config.class);
 
         RenderArmourCallback.Pre.EVENT.register(new RenderListener());

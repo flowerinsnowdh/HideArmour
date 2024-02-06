@@ -1,5 +1,7 @@
 package online.flowerinsnow.hidearmour.client.gui;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
@@ -12,6 +14,7 @@ import online.flowerinsnow.hidearmour.client.config.Config;
 import java.util.Timer;
 import java.util.TimerTask;
 
+@Environment(EnvType.CLIENT)
 public class GuiConfiguration extends Screen {
     private final Screen parent;
     private Timer resetReloadTimer;
