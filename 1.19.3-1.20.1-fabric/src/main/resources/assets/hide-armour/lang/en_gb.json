@@ -1,13 +1,13 @@
 {
-  "hidearmour.gui.config.title": "Hide Armour",
-  "hidearmour.gui.config.true": "§atrue",
-  "hidearmour.gui.config.false": "§cfalse",
-  "hidearmour.gui.config.enable": "Enable: %s",
-  "hidearmour.gui.config.helmet": "Hide helmet: %s",
-  "hidearmour.gui.config.chestplate": "Hide chestplate: %s",
-  "hidearmour.gui.config.leggings": "Hide leggings: %s",
-  "hidearmour.gui.config.boots": "Hide boots: %s",
-  "hidearmour.gui.config.reload.button": "Reload",
-  "hidearmour.gui.config.reload.success": "§aReload successful",
-  "hidearmour.gui.config.done": "Done"
+  "hide-armour.gui.config.title": "Hide Armour",
+  "hide-armour.gui.config.true": "§atrue",
+  "hide-armour.gui.config.false": "§cfalse",
+  "hide-armour.gui.config.enable": "Enable: %s",
+  "hide-armour.gui.config.helmet": "Hide helmet: %s",
+  "hide-armour.gui.config.chestplate": "Hide chestplate: %s",
+  "hide-armour.gui.config.leggings": "Hide leggings: %s",
+  "hide-armour.gui.config.boots": "Hide boots: %s",
+  "hide-armour.gui.config.reload.button": "Reload",
+  "hide-armour.gui.config.reload.success": "§aReload successful",
+  "hide-armour.gui.config.done": "Done"
 }
