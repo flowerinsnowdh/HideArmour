@@ -19,6 +19,7 @@ public final class RenderArmourCallback {
     /**
      * 返回FAIL即取消事件
      */
+    @Environment(EnvType.CLIENT)
     public interface Pre {
         Event<Pre> EVENT = EventFactory.createArrayBacked(Pre.class,
                 listeners -> ((matrices, vertexConsumers, entity, armorSlot, light, model) -> {
@@ -33,6 +34,7 @@ public final class RenderArmourCallback {
         ActionResult preRenderArmour(MatrixStack matrices, VertexConsumerProvider vertexConsumers, LivingEntity entity, EquipmentSlot armorSlot, int light, BipedEntityModel<LivingEntity> model);
     }
 
+    @Environment(EnvType.CLIENT)
     public interface Post {
         Event<Post> EVENT = EventFactory.createArrayBacked(Post.class,
                 listeners -> ((matrices, vertexConsumers, entity, armorSlot, light, model) -> {

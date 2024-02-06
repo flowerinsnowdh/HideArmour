@@ -3,7 +3,7 @@
 	"id": "hide-armour",
 	"version": "${version}",
 	"name": "Hide Armour",
-	"description": "",
+	"description": "An ultra-lightweight mod that hides own armor on the client side, and can specify whether the 4 armor slots need to be hidden.",
 	"authors": [
 		"flowerinsnow"
 	],
