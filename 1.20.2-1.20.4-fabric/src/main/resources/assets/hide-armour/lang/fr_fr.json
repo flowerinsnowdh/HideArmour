@@ -1,0 +1,13 @@
+{
+  "hidearmour.gui.config.title": "Hide Armour",
+  "hidearmour.gui.config.true": "§atrue",
+  "hidearmour.gui.config.false": "§cfalse",
+  "hidearmour.gui.config.enable": "Activer: %s",
+  "hidearmour.gui.config.helmet": "Masquer le casque: %s",
+  "hidearmour.gui.config.chestplate": "Masquer le plastron: %s",
+  "hidearmour.gui.config.leggings": "Masquer les leggings: %s",
+  "hidearmour.gui.config.boots": "Cacher les bottes: %s",
+  "hidearmour.gui.config.reload.button": "Recharger",
+  "hidearmour.gui.config.reload.success": "§aRechargement réussi",
+  "hidearmour.gui.config.done": "Fait"
+}

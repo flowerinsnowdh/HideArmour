@@ -13,9 +13,6 @@ repositories {
     maven {
         url 'https://maven.terraformersmc.com/releases/'
     }
-    maven {
-        url 'https://repo.flowerinsnow.online:10443/repository/maven-public/'
-    }
 }
 
 configurations {
