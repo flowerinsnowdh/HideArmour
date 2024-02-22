@@ -29,7 +29,11 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation 'com.terraformersmc:modmenu:9.0.0'
 
-	include(implementation('cc.carm.lib:easyconfiguration-yaml:3.9.1'))
+	// easyconfiguration
+	include(api('cc.carm.lib:easyconfiguration-core:3.9.1'))
+	include(api('cc.carm.lib:yamlcommentwriter:1.0.1'))
+	include(api('org.bspfsystems:yamlconfiguration:1.0.1'))
+	include(api('cc.carm.lib:easyconfiguration-yaml:3.9.1'))
 	
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
