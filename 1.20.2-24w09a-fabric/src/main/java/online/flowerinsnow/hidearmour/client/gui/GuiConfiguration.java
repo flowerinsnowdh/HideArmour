@@ -129,7 +129,7 @@ public class GuiConfiguration extends Screen {
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        this.renderBackgroundTexture(context);
+        this.renderBackground(context, mouseX, mouseY, delta);
         context.drawTextWithShadow(
                 this.textRenderer, this.title,
                 this.width / 2 - this.textRenderer.getWidth(this.title) / 2,

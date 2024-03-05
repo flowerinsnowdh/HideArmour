@@ -19,8 +19,6 @@
 		"client": [
             "online.flowerinsnow.hidearmour.client.HideArmourClient"
         ],
-        "main": [
-        ],
         "modmenu": [
             "online.flowerinsnow.hidearmour.client.modmenu.ModMenuImpl"
         ]
@@ -35,7 +33,7 @@
 		"fabric-api": ">=0.89.0"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"modmenu": ">=8.0.0"
 	},
     "custom": {
         "modmenu": {
