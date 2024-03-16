@@ -1,0 +1,13 @@
+{
+  "hide-armour.gui.config.title": "Hide Armour",
+  "hide-armour.gui.config.true": "§atrue",
+  "hide-armour.gui.config.false": "§cfalse",
+  "hide-armour.gui.config.enable": "включить: %s",
+  "hide-armour.gui.config.helmet": "скрыть шлем: %s",
+  "hide-armour.gui.config.chestplate": "скрыть нагрудник: %s",
+  "hide-armour.gui.config.leggings": "скрыть леггинсы: %s",
+  "hide-armour.gui.config.boots": "скрыть сапоги: %s",
+  "hide-armour.gui.config.reload.button": "Перезагрузить",
+  "hide-armour.gui.config.reload.success": "§aПерезагрузить успешно",
+  "hide-armour.gui.config.done": "Сделанный"
+}

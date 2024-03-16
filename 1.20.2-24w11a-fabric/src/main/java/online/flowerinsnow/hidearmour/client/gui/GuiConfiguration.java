@@ -18,20 +18,24 @@ import java.util.TimerTask;
 public class GuiConfiguration extends Screen {
     private final Screen parent;
     private Timer resetReloadTimer;
+    private ButtonWidget buttonEnable;
+    private ButtonWidget buttonHelmet;
+    private ButtonWidget buttonChestplate;
+    private ButtonWidget buttonLeggings;
+    private ButtonWidget buttonBoots;
 
     public GuiConfiguration(Screen parent) {
-        super(Text.translatable("hidearmour.gui.config.title"));
+        super(Text.translatable("hide-armour.gui.config.title"));
         this.parent = parent;
     }
 
     @Override
     protected void init() {
-        this.addDrawableChild(ButtonWidget.builder(
-                        Text.translatable("hidearmour.gui.config.enable", textTrueFalse(Config.ENABLE.getNotNull())),
+        this.addDrawableChild(buttonEnable = ButtonWidget.builder(
+                        Text.translatable("hide-armour.gui.config.enable", textTrueFalse(Config.ENABLE.getNotNull())),
                         button -> {
                             Config.ENABLE.set(!Config.ENABLE.getNotNull());
-                            HideArmourClient.saveConfig();
-                            button.setMessage(Text.translatable("hidearmour.gui.config.enable", textTrueFalse(Config.ENABLE.getNotNull())));
+                            button.setMessage(Text.translatable("hide-armour.gui.config.enable", textTrueFalse(Config.ENABLE.getNotNull())));
                         })
                 .dimensions(
                         this.width / 2 - 100,
@@ -40,12 +44,11 @@ public class GuiConfiguration extends Screen {
                 ).build()
         );
 
-        this.addDrawableChild(ButtonWidget.builder(
-                        Text.translatable("hidearmour.gui.config.helmet", textTrueFalse(Config.HELMET.getNotNull())),
+        this.addDrawableChild(buttonHelmet = ButtonWidget.builder(
+                        Text.translatable("hide-armour.gui.config.helmet", textTrueFalse(Config.HELMET.getNotNull())),
                         button -> {
                             Config.HELMET.set(!Config.HELMET.getNotNull());
-                            HideArmourClient.saveConfig();
-                            button.setMessage(Text.translatable("hidearmour.gui.config.helmet", textTrueFalse(Config.HELMET.getNotNull())));
+                            button.setMessage(Text.translatable("hide-armour.gui.config.helmet", textTrueFalse(Config.HELMET.getNotNull())));
                         })
                 .dimensions(
                         this.width / 2 - 100,
@@ -53,12 +56,11 @@ public class GuiConfiguration extends Screen {
                         100, 20
                 ).build()
         );
-        this.addDrawableChild(ButtonWidget.builder(
-                        Text.translatable("hidearmour.gui.config.chestplate", textTrueFalse(Config.CHESTPLATE.getNotNull())),
+        this.addDrawableChild(buttonChestplate = ButtonWidget.builder(
+                        Text.translatable("hide-armour.gui.config.chestplate", textTrueFalse(Config.CHESTPLATE.getNotNull())),
                         button -> {
                             Config.CHESTPLATE.set(!Config.CHESTPLATE.getNotNull());
-                            HideArmourClient.saveConfig();
-                            button.setMessage(Text.translatable("hidearmour.gui.config.chestplate", textTrueFalse(Config.CHESTPLATE.getNotNull())));
+                            button.setMessage(Text.translatable("hide-armour.gui.config.chestplate", textTrueFalse(Config.CHESTPLATE.getNotNull())));
                         })
                 .dimensions(
                         this.width / 2,
@@ -66,12 +68,11 @@ public class GuiConfiguration extends Screen {
                         100, 20
                 ).build()
         );
-        this.addDrawableChild(ButtonWidget.builder(
-                        Text.translatable("hidearmour.gui.config.leggings", textTrueFalse(Config.LEGGINGS.getNotNull())),
+        this.addDrawableChild(buttonLeggings = ButtonWidget.builder(
+                        Text.translatable("hide-armour.gui.config.leggings", textTrueFalse(Config.LEGGINGS.getNotNull())),
                         button -> {
                             Config.LEGGINGS.set(!Config.LEGGINGS.getNotNull());
-                            HideArmourClient.saveConfig();
-                            button.setMessage(Text.translatable("hidearmour.gui.config.leggings", textTrueFalse(Config.LEGGINGS.getNotNull())));
+                            button.setMessage(Text.translatable("hide-armour.gui.config.leggings", textTrueFalse(Config.LEGGINGS.getNotNull())));
                         })
                 .dimensions(
                         this.width / 2 - 100,
@@ -79,12 +80,11 @@ public class GuiConfiguration extends Screen {
                         100, 20
                 ).build()
         );
-        this.addDrawableChild(ButtonWidget.builder(
-                        Text.translatable("hidearmour.gui.config.boots", textTrueFalse(Config.BOOTS.getNotNull())),
+        this.addDrawableChild(buttonBoots = ButtonWidget.builder(
+                        Text.translatable("hide-armour.gui.config.boots", textTrueFalse(Config.BOOTS.getNotNull())),
                         button -> {
                             Config.BOOTS.set(!Config.BOOTS.getNotNull());
-                            HideArmourClient.saveConfig();
-                            button.setMessage(Text.translatable("hidearmour.gui.config.boots", textTrueFalse(Config.BOOTS.getNotNull())));
+                            button.setMessage(Text.translatable("hide-armour.gui.config.boots", textTrueFalse(Config.BOOTS.getNotNull())));
                         })
                 .dimensions(
                         this.width / 2,
@@ -94,10 +94,15 @@ public class GuiConfiguration extends Screen {
         );
 
         this.addDrawableChild(ButtonWidget.builder(
-                        Text.translatable("hidearmour.gui.config.reload.button"),
+                        Text.translatable("hide-armour.gui.config.reload.button"),
                         button -> {
                             HideArmourClient.reloadConfig();
-                            button.setMessage(Text.translatable("hidearmour.gui.config.reload.success"));
+                            buttonEnable.setMessage(Text.translatable("hide-armour.gui.config.enable", textTrueFalse(Config.ENABLE.getNotNull())));
+                            buttonHelmet.setMessage(Text.translatable("hide-armour.gui.config.helmet", textTrueFalse(Config.HELMET.getNotNull())));
+                            buttonChestplate.setMessage(Text.translatable("hide-armour.gui.config.chestplate", textTrueFalse(Config.CHESTPLATE.getNotNull())));
+                            buttonLeggings.setMessage(Text.translatable("hide-armour.gui.config.leggings", textTrueFalse(Config.LEGGINGS.getNotNull())));
+                            buttonBoots.setMessage(Text.translatable("hide-armour.gui.config.boots", textTrueFalse(Config.BOOTS.getNotNull())));
+                            button.setMessage(Text.translatable("hide-armour.gui.config.reload.success"));
                             if (resetReloadTimer != null) {
                                 resetReloadTimer.cancel();
                             }
@@ -105,7 +110,7 @@ public class GuiConfiguration extends Screen {
                             resetReloadTimer.schedule(new TimerTask() {
                                 @Override
                                 public void run() {
-                                    button.setMessage(Text.translatable("hidearmour.gui.config.reload.button"));
+                                    button.setMessage(Text.translatable("hide-armour.gui.config.reload.button"));
                                     resetReloadTimer = null;
                                 }
                             }, 3000L);
@@ -117,8 +122,11 @@ public class GuiConfiguration extends Screen {
                 ).build()
         );
         this.addDrawableChild(ButtonWidget.builder(
-                        Text.translatable("hidearmour.gui.config.done"),
-                        button -> MinecraftClient.getInstance().setScreen(parent))
+                        Text.translatable("hide-armour.gui.config.done"),
+                        button -> {
+                            MinecraftClient.getInstance().setScreen(parent);
+                            HideArmourClient.saveConfig();
+                        })
                 .dimensions(
                         this.width / 2,
                         this.height / 2 + 20,
@@ -139,6 +147,6 @@ public class GuiConfiguration extends Screen {
     }
 
     private MutableText textTrueFalse(boolean b) {
-        return b ? Text.translatable("hidearmour.gui.config.true") : Text.translatable("hidearmour.gui.config.false");
+        return b ? Text.translatable("hide-armour.gui.config.true") : Text.translatable("hide-armour.gui.config.false");
     }
 }

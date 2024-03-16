@@ -7,7 +7,7 @@ import net.fabricmc.api.Environment;
 
 @Environment(EnvType.CLIENT)
 public class Config extends ConfigurationRoot {
-    public static final ConfiguredValue<Boolean> ENABLE = ConfiguredValue.of(Boolean.class, false);
+    public static final ConfiguredValue<Boolean> ENABLE = ConfiguredValue.of(Boolean.class, true);
     public static final ConfiguredValue<Boolean> HELMET = ConfiguredValue.of(Boolean.class, true);
     public static final ConfiguredValue<Boolean> CHESTPLATE = ConfiguredValue.of(Boolean.class, true);
     public static final ConfiguredValue<Boolean> LEGGINGS = ConfiguredValue.of(Boolean.class, true);
