@@ -16,7 +16,7 @@
 
 配置文件位于`.minecraft/config/hidearmour.cfg`
 
-## 1.19.3-1.20.4-fabric
+## 1.19.3-24w11a-fabric
 安装[Mod Menu](https://modrinth.com/mod/modmenu)，然后在模组列菜单内点击配置
 
-配置文件位于`.minecraft/config/hidearmour.yml`
+配置文件位于`.minecraft/config/hide-armour.yml`

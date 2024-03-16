@@ -19,7 +19,7 @@ Use client command`/hidearmour` or `/hidearmor`
 
 The configuration file is located at `.minecraft/config/hidearmour.cfg`
 
-## 1.19.3-1.20.4-fabric
+## 1.19.3-24w11a-fabric
 Install [Mod Menu](https://modrinth.com/mod/modmenu), then click configuration in the mod menu.
 
-The configuration file is located at `.minecraft/config/hidearmour.yml`
+The configuration file is located at `.minecraft/config/hide-armour.yml`
