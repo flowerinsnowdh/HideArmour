@@ -17,7 +17,7 @@ public class HideArmourClient implements ClientModInitializer {
     private static ConfigurationProvider<?> provider;
     @Override
     public void onInitializeClient() {
-        provider = EasyConfiguration.from(FabricLoader.getInstance().getConfigDir().resolve("hideamour.yml").toFile());
+        provider = EasyConfiguration.from(FabricLoader.getInstance().getConfigDir().resolve("hide-amour.yml").toFile());
         provider.initialize(Config.class);
 
         RenderArmourCallback.Pre.EVENT.register(new RenderListener());
