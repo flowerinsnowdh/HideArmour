@@ -1,0 +1,13 @@
+{
+  "hide-armour.gui.config.title": "Hide Armour",
+  "hide-armour.gui.config.true": "§atrue",
+  "hide-armour.gui.config.false": "§cfalse",
+  "hide-armour.gui.config.enable": "Enable: %s",
+  "hide-armour.gui.config.helmet": "Hide helmet: %s",
+  "hide-armour.gui.config.chestplate": "Hide chestplate: %s",
+  "hide-armour.gui.config.leggings": "Hide leggings: %s",
+  "hide-armour.gui.config.boots": "Hide boots: %s",
+  "hide-armour.gui.config.reload.button": "Reload",
+  "hide-armour.gui.config.reload.success": "§aReload successful",
+  "hide-armour.gui.config.done": "Done"
+}

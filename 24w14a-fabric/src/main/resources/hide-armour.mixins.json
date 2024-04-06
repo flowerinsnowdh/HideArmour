@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"package": "online.flowerinsnow.hidearmour.client.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+	],
+	"client": [
+		"MixinArmorFeatureRenderer"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
