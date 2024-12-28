@@ -1,4 +1,4 @@
-.gradle
+.gradle/
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
@@ -42,3 +42,8 @@ bin/
 run/
 !**/src/main/**/run/
 !**/src/test/**/run/
+
+# Forge
+runs/
+!**/src/main/**/runs/
+!**/src/test/**/runs/
