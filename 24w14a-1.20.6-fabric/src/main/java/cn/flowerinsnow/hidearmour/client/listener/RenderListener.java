@@ -1,4 +1,4 @@
-package online.flowerinsnow.hidearmour.client.listener;
+package cn.flowerinsnow.hidearmour.client.listener;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -9,8 +9,8 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.ActionResult;
-import online.flowerinsnow.hidearmour.client.config.Config;
-import online.flowerinsnow.hidearmour.client.eci.RenderArmourCallback;
+import cn.flowerinsnow.hidearmour.client.config.Config;
+import cn.flowerinsnow.hidearmour.client.eci.RenderArmourCallback;
 
 @Environment(EnvType.CLIENT)
 public class RenderListener implements RenderArmourCallback.Pre {

@@ -1,31 +1,31 @@
-package online.flowerinsnow.hidearmour.client;
+package cn.flowerinsnow.hidearmour.client;
 
-import cc.carm.lib.configuration.EasyConfiguration;
-import cc.carm.lib.configuration.core.source.ConfigurationProvider;
+import cc.carm.lib.configuration.source.ConfigurationHolder;
+import cc.carm.lib.configuration.source.yaml.YAMLConfigFactory;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.crash.CrashReport;
-import online.flowerinsnow.hidearmour.client.config.Config;
-import online.flowerinsnow.hidearmour.client.eci.RenderArmourCallback;
-import online.flowerinsnow.hidearmour.client.listener.RenderListener;
+import cn.flowerinsnow.hidearmour.client.config.Config;
+import cn.flowerinsnow.hidearmour.client.eci.RenderArmourCallback;
+import cn.flowerinsnow.hidearmour.client.listener.RenderListener;
 
 @Environment(EnvType.CLIENT)
 public class HideArmourClient implements ClientModInitializer {
-    private static ConfigurationProvider<?> provider;
+    private static ConfigurationHolder<?> configurationHolder;
     @Override
     public void onInitializeClient() {
-        provider = EasyConfiguration.from(FabricLoader.getInstance().getConfigDir().resolve("hide-amour.yml").toFile());
-        provider.initialize(Config.class);
+        HideArmourClient.configurationHolder = YAMLConfigFactory.from(FabricLoader.getInstance().getConfigDir().resolve("hide-amour.yml").toFile()).build();
+        HideArmourClient.configurationHolder.initialize(Config.class);
 
         RenderArmourCallback.Pre.EVENT.register(new RenderListener());
     }
 
     public static void reloadConfig() {
         try {
-            provider.reload();
+            HideArmourClient.configurationHolder.reload();
         } catch (Exception e) {
             MinecraftClient.getInstance().setCrashReportSupplier(CrashReport.create(e, e.getMessage()));
             MinecraftClient.getInstance().stop();
@@ -34,7 +34,7 @@ public class HideArmourClient implements ClientModInitializer {
 
     public static void saveConfig() {
         try {
-            provider.save();
+            HideArmourClient.configurationHolder.save();
         } catch (Exception e) {
             MinecraftClient.getInstance().setCrashReportSupplier(CrashReport.create(e, e.getMessage()));
             MinecraftClient.getInstance().stop();

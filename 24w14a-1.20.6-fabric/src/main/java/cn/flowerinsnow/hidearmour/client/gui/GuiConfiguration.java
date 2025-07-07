@@ -1,4 +1,4 @@
-package online.flowerinsnow.hidearmour.client.gui;
+package cn.flowerinsnow.hidearmour.client.gui;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -8,8 +8,8 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
-import online.flowerinsnow.hidearmour.client.HideArmourClient;
-import online.flowerinsnow.hidearmour.client.config.Config;
+import cn.flowerinsnow.hidearmour.client.HideArmourClient;
+import cn.flowerinsnow.hidearmour.client.config.Config;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -137,7 +137,6 @@ public class GuiConfiguration extends Screen {
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        this.renderBackground(context, mouseX, mouseY, delta);
         context.drawTextWithShadow(
                 this.textRenderer, this.title,
                 this.width / 2 - this.textRenderer.getWidth(this.title) / 2,

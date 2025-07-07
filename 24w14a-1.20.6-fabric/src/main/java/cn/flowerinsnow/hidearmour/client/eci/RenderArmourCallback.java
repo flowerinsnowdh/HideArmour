@@ -1,4 +1,4 @@
-package online.flowerinsnow.hidearmour.client.eci;
+package cn.flowerinsnow.hidearmour.client.eci;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
