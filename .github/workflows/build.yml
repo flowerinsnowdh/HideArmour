@@ -15,7 +15,7 @@ jobs:
       contents: write
     defaults:
       run:
-        working-directory: 24w14a-1.21.1-fabric/
+        working-directory: 1.21.2-1.21.5-fabric
 
     steps:
       - uses: actions/checkout@v4
@@ -40,5 +40,5 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          files: 24w14a-1.21.1-fabric/build/libs/*.jar
+          files: 1.21.2-1.21.5-fabric/build/libs/*.jar
         if: github.ref_type == 'tag'
