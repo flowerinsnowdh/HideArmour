@@ -13,9 +13,8 @@ base {
 repositories {
 	if (System.getenv("GRADLE_USE_MIRROR") == "true") {
 		maven("https://repo.nju.edu.cn/maven/")
-	} else {
-		mavenCentral()
 	}
+	mavenCentral()
 	maven("https://maven.pkg.github.com/CarmJos/configured") {
 		credentials {
 			username = "x-access-token"
