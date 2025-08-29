@@ -1,0 +1,14 @@
+{
+    "hide-armour.screen.config.title": "Hide Armour",
+    "hide-armour.screen.config.enable.true": "有効化: §a有効",
+    "hide-armour.screen.config.enable.false": "有効化: §c無効",
+    "hide-armour.screen.config.hide-helmet.true": "ヘルメットを非表示: §a有効",
+    "hide-armour.screen.config.hide-helmet.false": "ヘルメットを非表示: §c無効",
+    "hide-armour.screen.config.hide-chestplate.true": "チェストプレートを非表示: §a有効",
+    "hide-armour.screen.config.hide-chestplate.false": "チェストプレートを非表示: §c無効",
+    "hide-armour.screen.config.hide-leggings.true": "レギンスを非表示: §a有効",
+    "hide-armour.screen.config.hide-leggings.false": "レギンスを非表示: §c無効",
+    "hide-armour.screen.config.hide-boots.true": "ブーツを非表示: §a有効",
+    "hide-armour.screen.config.hide-boots.false": "ブーツを非表示: §c無効",
+    "hide-armour.screen.config.done": "完了"
+}
