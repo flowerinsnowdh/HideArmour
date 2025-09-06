@@ -1,0 +1,13 @@
+{
+  "hide-armour.gui.config.title": "Hide Armour",
+  "hide-armour.gui.config.true": "§a有効",
+  "hide-armour.gui.config.false": "§c無効",
+  "hide-armour.gui.config.enable": "有効化: %s",
+  "hide-armour.gui.config.helmet": "ヘルメットを非表示: %s",
+  "hide-armour.gui.config.chestplate": "チェストプレートを非表示: %s",
+  "hide-armour.gui.config.leggings": "レギンスを非表示: %s",
+  "hide-armour.gui.config.boots": "ブーツを非表示: %s",
+  "hide-armour.gui.config.reload.button": "再読み込み",
+  "hide-armour.gui.config.reload.success": "§a再読み込みに成功しました",
+  "hide-armour.gui.config.done": "完了"
+}
