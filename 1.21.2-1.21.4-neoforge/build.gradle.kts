@@ -51,7 +51,6 @@ tasks.processResources {
     val replaceProperties: Map<String, Any?> = mapOf(
             "minecraft_version" to project.property("minecraft_version"),
             "minecraft_version_range" to project.property("minecraft_version_range"),
-            "neo_version" to project.property("neo_version"),
             "loader_version_range" to project.property("loader_version_range"),
             "mod_id" to project.property("mod_id"),
             "mod_name" to project.property("mod_name"),
