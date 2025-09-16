@@ -1,6 +1,6 @@
 package cn.flowerinsnow.hidearmour.screen;
 
-import cn.flowerinsnow.hidearmour.common.config.Config;
+import cn.flowerinsnow.hidearmour.config.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
@@ -8,24 +8,21 @@ import net.minecraft.network.chat.Component;
 
 public class ScreenConfig extends Screen {
     private final Screen parent;
-    private final Config config;
 
-    public ScreenConfig(Screen parent, Config config) {
+    public ScreenConfig(Screen parent) {
         super(Component.translatable("hide-armour.screen.config.title"));
         this.parent = parent;
-        this.config = config;
     }
 
     @Override
     protected void init() {
         this.addRenderableWidget(
                 Button.builder(
-                        Component.translatable(this.config.enable ? "hide-armour.screen.config.enable.true" : "hide-armour.screen.config.enable.false"),
+                        Component.translatable(Config.CONFIG.enable.isTrue() ? "hide-armour.screen.config.enable.true" : "hide-armour.screen.config.enable.false"),
                         button -> {
-                            Config config = ScreenConfig.this.config;
-                            config.enable = !config.enable;
-                            config.save();
-                            button.setMessage(Component.translatable(config.enable ? "hide-armour.screen.config.enable.true" : "hide-armour.screen.config.enable.false"));
+                            Config.CONFIG.enable.set(!Config.CONFIG.enable.getAsBoolean());
+                            Config.CONFIG_SPEC.save();
+                            button.setMessage(Component.translatable(Config.CONFIG.enable.isTrue() ? "hide-armour.screen.config.enable.true" : "hide-armour.screen.config.enable.false"));
                         }
                 )
                         .pos(this.width / 2 - 100, this.height / 2 - 42)
@@ -35,12 +32,11 @@ public class ScreenConfig extends Screen {
 
         this.addRenderableWidget(
                 Button.builder(
-                        Component.translatable(this.config.helmet ? "hide-armour.screen.config.hide-helmet.true" : "hide-armour.screen.config.hide-helmet.false"),
+                        Component.translatable(Config.CONFIG.helmet.isTrue() ? "hide-armour.screen.config.hide-helmet.true" : "hide-armour.screen.config.hide-helmet.false"),
                         button -> {
-                            Config config = ScreenConfig.this.config;
-                            config.helmet = !config.helmet;
-                            config.save();
-                            button.setMessage(Component.translatable(config.helmet ? "hide-armour.screen.config.hide-helmet.true" : "hide-armour.screen.config.hide-helmet.false"));
+                            Config.CONFIG.helmet.set(!Config.CONFIG.helmet.getAsBoolean());
+                            Config.CONFIG_SPEC.save();
+                            button.setMessage(Component.translatable(Config.CONFIG.helmet.isTrue() ? "hide-armour.screen.config.hide-helmet.true" : "hide-armour.screen.config.hide-helmet.false"));
                         }
                 )
                         .pos(this.width / 2 - 100, this.height / 2 - 21)
@@ -50,12 +46,11 @@ public class ScreenConfig extends Screen {
 
         this.addRenderableWidget(
                 Button.builder(
-                        Component.translatable(this.config.chestplate ? "hide-armour.screen.config.hide-chestplate.true" : "hide-armour.screen.config.hide-chestplate.false"),
+                        Component.translatable(Config.CONFIG.chestplate.isTrue() ? "hide-armour.screen.config.hide-chestplate.true" : "hide-armour.screen.config.hide-chestplate.false"),
                         button -> {
-                            Config config = ScreenConfig.this.config;
-                            config.chestplate = !config.chestplate;
-                            config.save();
-                            button.setMessage(Component.translatable(config.chestplate ? "hide-armour.screen.config.hide-chestplate.true" : "hide-armour.screen.config.hide-chestplate.false"));
+                            Config.CONFIG.chestplate.set(!Config.CONFIG.chestplate.getAsBoolean());
+                            Config.CONFIG_SPEC.save();
+                            button.setMessage(Component.translatable(Config.CONFIG.chestplate.isTrue() ? "hide-armour.screen.config.hide-chestplate.true" : "hide-armour.screen.config.hide-chestplate.false"));
                         }
                 )
                         .pos(this.width / 2 + 1, this.height / 2 - 21)
@@ -65,12 +60,11 @@ public class ScreenConfig extends Screen {
 
         this.addRenderableWidget(
                 Button.builder(
-                        Component.translatable(this.config.leggings ? "hide-armour.screen.config.hide-leggings.true" : "hide-armour.screen.config.hide-leggings.false"),
+                        Component.translatable(Config.CONFIG.leggings.isTrue() ? "hide-armour.screen.config.hide-leggings.true" : "hide-armour.screen.config.hide-leggings.false"),
                         button -> {
-                            Config config = ScreenConfig.this.config;
-                            config.leggings = !config.leggings;
-                            config.save();
-                            button.setMessage(Component.translatable(config.leggings ? "hide-armour.screen.config.hide-leggings.true" : "hide-armour.screen.config.hide-leggings.false"));
+                            Config.CONFIG.leggings.set(!Config.CONFIG.leggings.getAsBoolean());
+                            Config.CONFIG_SPEC.save();
+                            button.setMessage(Component.translatable(Config.CONFIG.leggings.isTrue() ? "hide-armour.screen.config.hide-leggings.true" : "hide-armour.screen.config.hide-leggings.false"));
                         }
                 )
                         .pos(this.width / 2 - 100, this.height / 2)
@@ -80,12 +74,11 @@ public class ScreenConfig extends Screen {
 
         this.addRenderableWidget(
                 Button.builder(
-                        Component.translatable(this.config.boots ? "hide-armour.screen.config.hide-boots.true" : "hide-armour.screen.config.hide-boots.false"),
+                        Component.translatable(Config.CONFIG.boots.isTrue() ? "hide-armour.screen.config.hide-boots.true" : "hide-armour.screen.config.hide-boots.false"),
                         button -> {
-                            Config config = ScreenConfig.this.config;
-                            config.boots = !config.boots;
-                            config.save();
-                            button.setMessage(Component.translatable(config.boots ? "hide-armour.screen.config.hide-boots.true" : "hide-armour.screen.config.hide-boots.false"));
+                            Config.CONFIG.boots.set(!Config.CONFIG.boots.getAsBoolean());
+                            Config.CONFIG_SPEC.save();
+                            button.setMessage(Component.translatable(Config.CONFIG.boots.isTrue() ? "hide-armour.screen.config.hide-boots.true" : "hide-armour.screen.config.hide-boots.false"));
                         }
                 )
                         .pos(this.width / 2 + 1, this.height / 2)

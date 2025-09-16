@@ -15,7 +15,7 @@ jobs:
       contents: write
     defaults:
       run:
-        working-directory: 1.21.6-1.21.7-fabric/
+        working-directory: 1.21.2-1.21.4/
 
     steps:
       - uses: actions/checkout@v4
@@ -34,11 +34,9 @@ jobs:
 
       - name: Build
         run: ./gradlew build
-        env:
-          GITHUB_PKG_R_TOKEN: ${{ secrets.PKG_R_TOKEN }}
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          files: 1.21.6-1.21.7-fabric/build/libs/*.jar
+          files: 1.21.2-1.21.4/build/libs/*.jar
         if: github.ref_type == 'tag'
