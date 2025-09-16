@@ -15,7 +15,7 @@ jobs:
       contents: write
     defaults:
       run:
-        working-directory: 1.21.2-1.21.4/
+        working-directory: 1.21.2-1.21.4-neoforge/
 
     steps:
       - uses: actions/checkout@v4
@@ -38,5 +38,5 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          files: 1.21.2-1.21.4/build/libs/*.jar
+          files: 1.21.2-1.21.4-neoforge/build/libs/*.jar
         if: github.ref_type == 'tag'
