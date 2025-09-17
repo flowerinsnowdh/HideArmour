@@ -2,9 +2,11 @@ package cn.flowerinsnow.hidearmour.screen;
 
 import cn.flowerinsnow.hidearmour.config.Config;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import org.jetbrains.annotations.NotNull;
 
 public class ScreenConfig extends Screen {
     private final Screen parent;
@@ -94,6 +96,15 @@ public class ScreenConfig extends Screen {
                         .pos(this.width / 2 - 100, this.height / 2 + 21)
                         .size(201, 20)
                         .build()
+        );
+    }
+
+    @Override
+    public void render(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float delta) {
+        super.render(graphics, mouseX, mouseY, delta);
+        graphics.drawCenteredString(this.font, this.title,
+                this.width / 2 - this.font.width(this.title) / 2, 10,
+                0xFFFFFF
         );
     }
 }

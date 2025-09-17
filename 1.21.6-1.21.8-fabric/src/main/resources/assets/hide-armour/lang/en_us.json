@@ -1,13 +1,14 @@
 {
-  "hide-armour.gui.config.title": "Hide Armour",
-  "hide-armour.gui.config.true": "§atrue",
-  "hide-armour.gui.config.false": "§cfalse",
-  "hide-armour.gui.config.enable": "Enable: %s",
-  "hide-armour.gui.config.helmet": "Hide helmet: %s",
-  "hide-armour.gui.config.chestplate": "Hide chestplate: %s",
-  "hide-armour.gui.config.leggings": "Hide leggings: %s",
-  "hide-armour.gui.config.boots": "Hide boots: %s",
-  "hide-armour.gui.config.reload.button": "Reload",
-  "hide-armour.gui.config.reload.success": "§aReload successful",
-  "hide-armour.gui.config.done": "Done"
+  "hide-armour.screen.config.title": "Hide Armour",
+  "hide-armour.screen.config.enable.true": "Enable: §atrue",
+  "hide-armour.screen.config.enable.false": "Enable: §cfalse",
+  "hide-armour.screen.config.hide-helmet.true": "Hide helmet: §atrue",
+  "hide-armour.screen.config.hide-helmet.false": "Hide helmet: §cfalse",
+  "hide-armour.screen.config.hide-chestplate.true": "Hide helmet: §atrue",
+  "hide-armour.screen.config.hide-chestplate.false": "Hide helmet: §cfalse",
+  "hide-armour.screen.config.hide-leggings.true": "Hide leggings: §atrue",
+  "hide-armour.screen.config.hide-leggings.false": "Hide leggings: §cfalse",
+  "hide-armour.screen.config.hide-boots.true": "Hide boots: §atrue",
+  "hide-armour.screen.config.hide-boots.false": "Hide boots: §cfalse",
+  "hide-armour.screen.config.done": "Done"
 }

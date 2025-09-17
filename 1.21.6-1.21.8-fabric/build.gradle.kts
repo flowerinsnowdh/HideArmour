@@ -1,5 +1,5 @@
 plugins {
-	id("fabric-loom").version("1.11-SNAPSHOT")
+	id("fabric-loom").version("1.12.0-alpha.15")
 	id("java")
 }
 
@@ -15,12 +15,6 @@ repositories {
 		maven("https://repo.nju.edu.cn/maven/")
 	}
 	mavenCentral()
-	maven("https://maven.pkg.github.com/CarmJos/configured") {
-		credentials {
-			username = "x-access-token"
-			password = System.getenv("GITHUB_PKG_R_TOKEN")
-		}
-	}
 	maven("https://maven.terraformersmc.com/releases/")
 }
 
@@ -32,15 +26,10 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_version")}")
-	modImplementation("com.terraformersmc:modmenu:15.0.0-beta.3")
+	modImplementation("com.terraformersmc:modmenu:15.0.0")
 
-	include(implementation("cc.carm.lib:configured-core:${project.property("configured_version")}") as Dependency)
-	include(implementation("cc.carm.lib:configured-feature-file:${project.property("configured_version")}") as Dependency)
-	include(implementation("cc.carm.lib:configured-feature-section:${project.property("configured_version")}") as Dependency)
-	include(implementation("cc.carm.lib:configured-feature-commentable:${project.property("configured_version")}") as Dependency)
-	include(implementation("cc.carm.lib:yamlcommentwriter:1.2.1") as Dependency)
-	include(implementation("org.yaml:snakeyaml:2.4") as Dependency)
-	include(implementation("cc.carm.lib:configured-yaml:${project.property("configured_version")}") as Dependency)
+	include(implementation("com.electronwill.night-config:core:${project.property("night_config_version")}") as Dependency)
+	include(implementation("com.electronwill.night-config:toml:${project.property("night_config_version")}") as Dependency)
 }
 
 tasks.processResources {
@@ -59,8 +48,9 @@ tasks.withType<JavaCompile>().configureEach {
 }
 
 java {
-	sourceCompatibility = JavaVersion.VERSION_21
-	targetCompatibility = JavaVersion.VERSION_21
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
 }
 
 tasks.jar {

@@ -4,7 +4,7 @@ pluginManagement {
 		if (System.getenv("GRADLE_USE_MIRROR") == "true") {
 			maven("https://repo.nju.edu.cn/maven/")
 		}
-		gradlePluginPortal()
 		mavenCentral()
+		gradlePluginPortal()
 	}
 }
