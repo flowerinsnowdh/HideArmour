@@ -9,14 +9,29 @@
 ## 1.8.9至1.12.2-forge
 使用客户端命令`/hidearmour`或`/hidearmor`来操作
 
-- `true` - 启用
-- `false` - 禁用
-- `status` - 显示状态
-- `reload` - 重载配置
+- `true` - Enable
+- `false` - Disable
+- `status` - Show status
+- `reload` - Reload config
 
-配置文件位于`.minecraft/config/hidearmour.cfg`
+The configuration file is located at `.minecraft/config/hidearmour.cfg`
 
-## 1.19.3-24w11a-fabric
+## 1.19.3至1.20.1-fabric
 安装[Mod Menu](https://modrinth.com/mod/modmenu)，然后在模组列菜单内点击配置
 
-配置文件位于`.minecraft/config/hide-armour.yml`
+配置文件位于 `.minecraft/config/hideamour.yml`
+
+## 1.20.2至1.21.5-fabric
+安装[Mod Menu](https://modrinth.com/mod/modmenu)，然后在模组列菜单内点击配置
+
+配置文件位于 `.minecraft/config/hide-amour.yml`
+
+## 1.21.6至1.21.8-fabric
+安装[Mod Menu](https://modrinth.com/mod/modmenu)，然后在模组列菜单内点击配置
+
+配置文件位于 `.minecraft/config/hide-armour.toml`
+
+# 1.21.2至1.21.4-neoforge
+安装[Mod Menu](https://modrinth.com/mod/modmenu)，然后在模组列菜单内点击配置
+
+配置文件位于 `.minecraft/config/hide_armour-client.toml`
