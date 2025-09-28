@@ -1,5 +1,5 @@
 plugins {
-	id("fabric-loom").version("1.12.0-alpha.15")
+	id("fabric-loom").version("1.12.0-alpha.20")
 	id("java")
 }
 
