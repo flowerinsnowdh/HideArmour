@@ -17,7 +17,7 @@
 	"environment": "client",
 	"entrypoints": {
 		"client": [
-			"cn.flowerinsnow.hidearmour.client.HideArmourClient"
+            "cn.flowerinsnow.hidearmour.client.HideArmour"
         ],
         "modmenu": [
 			"cn.flowerinsnow.hidearmour.client.modmenu.ModMenuImpl"

@@ -1,11 +1,13 @@
 pluginManagement {
 	repositories {
 		maven("https://maven.fabricmc.net/")
-		if (System.getenv("GRADLE_USE_MIRROR") == "true") {
-			maven("https://repo.nju.edu.cn/maven/")
-		} else {
-			gradlePluginPortal()
-			mavenCentral()
+		System.getenv("GRADLE_CENTRAL_MIRROR")?.let {
+			maven(it)
 		}
+		mavenCentral()
+		System.getenv("GRADLE_PLUGIN_PORTAL_MIRROR")?.let {
+			maven(it)
+		}
+		gradlePluginPortal()
 	}
 }
