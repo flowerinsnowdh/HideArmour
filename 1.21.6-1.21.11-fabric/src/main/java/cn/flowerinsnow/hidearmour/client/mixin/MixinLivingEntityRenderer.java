@@ -51,8 +51,8 @@ public class MixinLivingEntityRenderer<T extends LivingEntity, S extends LivingE
                     opcode = Opcodes.PUTFIELD
             )
     )
-    public void redirectWornHeadType(LivingEntityRenderState instance, SkullBlock.Type value) {
-        if (!clientPlayer) {
+    public void overwriteWornHeadType(LivingEntityRenderState instance, SkullBlock.Type value) {
+        if (!this.clientPlayer) {
             instance.wornHeadType = value;
             return;
         }
@@ -68,8 +68,8 @@ public class MixinLivingEntityRenderer<T extends LivingEntity, S extends LivingE
                     opcode = Opcodes.PUTFIELD
             )
     )
-    public void redirectWornHeadProfile(LivingEntityRenderState instance, ResolvableProfile value) {
-        if (!clientPlayer) {
+    public void overwriteWornHeadProfile(LivingEntityRenderState instance, ResolvableProfile value) {
+        if (!this.clientPlayer) {
             instance.wornHeadProfile = value;
             return;
         }
@@ -83,7 +83,7 @@ public class MixinLivingEntityRenderer<T extends LivingEntity, S extends LivingE
                     target = "Lnet/minecraft/client/renderer/item/ItemModelResolver;updateForLiving(Lnet/minecraft/client/renderer/item/ItemStackRenderState;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;Lnet/minecraft/world/entity/LivingEntity;)V"
             )
     )
-    public void redirectItemModelResolverUpdateForLiving(ItemModelResolver instance, ItemStackRenderState output, ItemStack item, ItemDisplayContext displayContext, LivingEntity entity) {
+    public void overwriteItemModelResolverUpdateForLiving(ItemModelResolver instance, ItemStackRenderState output, ItemStack item, ItemDisplayContext displayContext, LivingEntity entity) {
         if (!this.clientPlayer) {
             instance.updateForLiving(output, item, displayContext, entity);
             return;
