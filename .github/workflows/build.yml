@@ -1,0 +1,41 @@
+name: "Build"
+
+on:
+  push:
+    branches:
+      - "**"
+    tags:
+      - "**"
+
+jobs:
+  release:
+    name: "Release"
+    runs-on: "ubuntu-latest"
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: 1.21.6-1.21.11-fabric/
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: gradle/actions/wrapper-validation@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: temurin
+      
+      - name: Grant execute permission to gradlew
+        run: chmod +x gradlew
+
+      - name: Build
+        run: ./gradlew build
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: 1.21.6-1.21.11-fabric/build/libs/*
+        if: github.ref_type == 'tag'
