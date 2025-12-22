@@ -5,7 +5,7 @@
 	"mixins": [
 	],
 	"client": [
-		"MixinArmorFeatureRenderer"
+        "MixinBipedEntityRenderer"
 	],
 	"injectors": {
 		"defaultRequire": 1

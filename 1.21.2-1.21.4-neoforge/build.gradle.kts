@@ -1,7 +1,7 @@
 plugins {
     id("idea")
     id("java-library")
-    id("net.neoforged.gradle.userdev") version "7.0.192"
+    id("net.neoforged.moddev") version "2.0.133"
 }
 
 tasks.wrapper {
@@ -13,11 +13,19 @@ tasks.wrapper {
     distributionType = Wrapper.DistributionType.BIN
 }
 
-version = project.property("mod_version")!!
-group = project.property("mod_group_id")!!
+version = "${project.property("mod_version")}"
+group = "${project.property("mod_group_id")}"
 
 base {
-    archivesName = project.property("mod_id") as String
+    archivesName = "${project.property("mod_id")}"
+}
+
+neoForge {
+    version = "${project.property("neo_version")}"
+    parchment {
+        mappingsVersion = "${project.property("parchment_mappings_version")}"
+        minecraftVersion = "${project.property("parchment_minecraft_version")}"
+    }
 }
 
 java {
@@ -31,33 +39,29 @@ sourceSets.main.get().resources {
     srcDir("src/generated/resources")
 }
 
-// Sets up a dependency configuration called 'localRuntime'.
-// This configuration should be used instead of 'runtimeOnly' to declare
-// a dependency that will be present for runtime testing but that is
-// "optional", meaning it will not be pulled by dependents of this mod.
-configurations {
-    runtimeClasspath.get().extendsFrom(localRuntime.get())
-}
+//configurations {
+//    runtimeClasspath.get().extendsFrom(localRuntime.get())
+//}
 
 tasks.jar {
     from("../LICENSE")
 }
 
 dependencies {
-    implementation("net.neoforged:neoforge:${project.property("neo_version")}")
+
 }
 
 tasks.processResources {
-    val replaceProperties: Map<String, Any?> = mapOf(
-            "minecraft_version" to project.property("minecraft_version"),
-            "minecraft_version_range" to project.property("minecraft_version_range"),
-            "loader_version_range" to project.property("loader_version_range"),
-            "mod_id" to project.property("mod_id"),
-            "mod_name" to project.property("mod_name"),
-            "mod_license" to project.property("mod_license"),
-            "mod_version" to project.property("mod_version"),
-            "mod_authors" to project.property("mod_authors"),
-            "mod_description" to project.property("mod_description")
+    val replaceProperties = mapOf(
+            "minecraft_version" to "${project.property("minecraft_version")}",
+            "minecraft_version_range" to "${project.property("minecraft_version_range")}",
+            "loader_version_range" to "${project.property("loader_version_range")}",
+            "mod_id" to "${project.property("mod_id")}",
+            "mod_name" to "${project.property("mod_name")}",
+            "mod_license" to "${project.property("mod_license")}",
+            "mod_version" to "${project.property("mod_version")}",
+            "mod_authors" to "${project.property("mod_authors")}",
+            "mod_description" to "${project.property("mod_description")}"
     )
     replaceProperties.forEach(inputs::property)
 

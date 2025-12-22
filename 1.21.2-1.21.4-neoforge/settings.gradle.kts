@@ -1,13 +1,12 @@
 pluginManagement {
     repositories {
-        if (System.getenv("GRADLE_USE_MIRROR") == "true") {
-            maven("https://repo.nju.edu.cn/maven/")
+        System.getenv("GRADLE_CENTRAL_MIRROR")?.let {
+            maven(it)
         }
         gradlePluginPortal()
-        maven("https://maven.neoforged.net/releases")
     }
 }
 
 plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "0.9.0"
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }

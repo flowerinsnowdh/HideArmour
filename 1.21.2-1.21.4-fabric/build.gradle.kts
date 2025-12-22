@@ -1,5 +1,5 @@
 plugins {
-	id("net.fabricmc.fabric-loom-remap") version "1.14-SNAPSHOT"
+	id("fabric-loom") version "1.14.8"
 }
 
 version = "${project.property("mod_version")}"
@@ -22,16 +22,18 @@ repositories {
 }
 
 dependencies {
+	// To change the versions see the gradle.properties file
 	minecraft("com.mojang:minecraft:${project.property("minecraft_version")}")
-	mappings(loom.officialMojangMappings())
+	mappings("net.fabricmc:yarn:${project.property("yarn_mappings")}:v2")
 	modImplementation("net.fabricmc:fabric-loader:${project.property("loader_version")}")
 
+	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_version")}")
 
 	modImplementation("com.terraformersmc:modmenu:${project.property("modmenu_version")}")
 
 	include(implementation("tools.jackson.core:jackson-core:${project.property("jackson_version")}") as Dependency)
-	include(implementation("com.fasterxml.jackson.core:jackson-annotations:2.20") as Dependency)
+	include(implementation("com.fasterxml.jackson.core:jackson-annotations:${project.property("jackson_annotations_version")}") as Dependency)
 	include(implementation("tools.jackson.core:jackson-databind:${project.property("jackson_version")}") as Dependency)
 
 	compileOnly("org.jetbrains:annotations:${project.property("jetbrains_annotations_version")}")
@@ -47,11 +49,6 @@ tasks.processResources {
 		expand(replaceProperties)
 	}
 }
-
-tasks.withType<JavaCompile>().configureEach {
-	options.encoding = "UTF-8"
-}
-
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
