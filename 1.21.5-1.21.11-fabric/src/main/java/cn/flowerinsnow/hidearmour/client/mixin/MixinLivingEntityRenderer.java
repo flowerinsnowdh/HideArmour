@@ -1,7 +1,7 @@
 package cn.flowerinsnow.hidearmour.client.mixin;
 
 import cn.flowerinsnow.hidearmour.client.eci.ClientPlayerBlockHeadGetterEvent;
-import cn.flowerinsnow.hidearmour.client.eci.ClientPlayerWornHeadGetterEvent;
+import cn.flowerinsnow.hidearmour.client.eci.ClientPlayerSkullHeadGetterEvent;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
@@ -56,7 +56,7 @@ public class MixinLivingEntityRenderer<T extends LivingEntity, S extends LivingE
             instance.wornHeadType = value;
             return;
         }
-        instance.wornHeadType = ClientPlayerWornHeadGetterEvent.TYPE.invoker().onClientPlayerWornHeadTypeGet(value);
+        instance.wornHeadType = ClientPlayerSkullHeadGetterEvent.TYPE.invoker().onClientPlayerWornHeadTypeGet(value);
     }
 
     @Redirect(
@@ -73,7 +73,7 @@ public class MixinLivingEntityRenderer<T extends LivingEntity, S extends LivingE
             instance.wornHeadProfile = value;
             return;
         }
-        instance.wornHeadProfile = ClientPlayerWornHeadGetterEvent.PROFILE.invoker().onClientPlayerWornHeadProfileGet(value);
+        instance.wornHeadProfile = ClientPlayerSkullHeadGetterEvent.PROFILE.invoker().onClientPlayerWornHeadProfileGet(value);
     }
 
     @Redirect(

@@ -2,14 +2,14 @@ package cn.flowerinsnow.hidearmour.client.eci;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
-import net.minecraft.world.item.component.ResolvableProfile;
-import net.minecraft.world.level.block.SkullBlock;
+import net.minecraft.block.SkullBlock;
+import net.minecraft.component.type.ProfileComponent;
 import org.jetbrains.annotations.Nullable;
 
-public interface ClientPlayerWornHeadGetterEvent {
+public interface ClientPlayerSkullHeadGetterEvent {
     Event<Type> TYPE = EventFactory.createArrayBacked(Type.class, listeners -> originalType -> {
         for (Type listener : listeners) {
-            SkullBlock.Type type = listener.onClientPlayerWornHeadTypeGet(originalType);
+            SkullBlock.SkullType type = listener.onClientPlayerWornHeadTypeGet(originalType);
             if (type != originalType) {
                 return type;
             }
@@ -19,7 +19,7 @@ public interface ClientPlayerWornHeadGetterEvent {
 
     Event<Profile> PROFILE = EventFactory.createArrayBacked(Profile.class, listeners -> originalProfile -> {
         for (Profile listener : listeners) {
-            ResolvableProfile profile = listener.onClientPlayerWornHeadProfileGet(originalProfile);
+            ProfileComponent profile = listener.onClientPlayerWornHeadProfileGet(originalProfile);
             if (profile != originalProfile) {
                 return profile;
             }
@@ -28,10 +28,10 @@ public interface ClientPlayerWornHeadGetterEvent {
     });
 
     interface Type {
-        @Nullable SkullBlock.Type onClientPlayerWornHeadTypeGet(@Nullable SkullBlock.Type originalType);
+        @Nullable SkullBlock.SkullType onClientPlayerWornHeadTypeGet(@Nullable SkullBlock.SkullType originalType);
     }
 
     interface Profile {
-        @Nullable ResolvableProfile onClientPlayerWornHeadProfileGet(@Nullable ResolvableProfile originalProfile);
+        @Nullable ProfileComponent onClientPlayerWornHeadProfileGet(@Nullable ProfileComponent originalProfile);
     }
 }

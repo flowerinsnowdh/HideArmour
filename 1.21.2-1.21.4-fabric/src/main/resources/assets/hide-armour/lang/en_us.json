@@ -1,13 +1,14 @@
 {
-  "hide-armour.gui.config.title": "Hide Armour",
-  "hide-armour.gui.config.true": "§atrue",
-  "hide-armour.gui.config.false": "§cfalse",
-  "hide-armour.gui.config.enable": "Enable: %s",
-  "hide-armour.gui.config.helmet": "Hide helmet: %s",
-  "hide-armour.gui.config.chestplate": "Hide chestplate: %s",
-  "hide-armour.gui.config.leggings": "Hide leggings: %s",
-  "hide-armour.gui.config.boots": "Hide boots: %s",
-  "hide-armour.gui.config.reload.button": "Reload",
-  "hide-armour.gui.config.reload.success": "§aReload successful",
-  "hide-armour.gui.config.done": "Done"
+    "hide-armour.screen.config.title": "Hide Armour",
+    "hide-armour.screen.config.constant.true": "true",
+    "hide-armour.screen.config.constant.false": "false",
+    "hide-armour.screen.config.enable": "Enable: %s",
+    "hide-armour.screen.config.hide.head.helmet": "Hide helmet: %s",
+    "hide-armour.screen.config.hide.head.skull": "Hide skull on head: %s",
+    "hide-armour.screen.config.hide.head.block": "Hide block on head: %s",
+    "hide-armour.screen.config.hide.chest.chestplate": "Hide chestplate: %s",
+    "hide-armour.screen.config.hide.chest.elytra": "Hide elytra: %s",
+    "hide-armour.screen.config.hide.leggings": "Hide leggings: %s",
+    "hide-armour.screen.config.hide.boots": "Hide boots: %s",
+    "hide-armour.screen.config.done": "Done"
 }

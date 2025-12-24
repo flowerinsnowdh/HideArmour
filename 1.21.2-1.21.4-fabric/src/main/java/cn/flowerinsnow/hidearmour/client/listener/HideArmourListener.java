@@ -6,14 +6,14 @@ import cn.flowerinsnow.hidearmour.client.eci.ClientPlayerEquipmentGetterEvent;
 import cn.flowerinsnow.hidearmour.client.eci.ClientPlayerSkullHeadGetterEvent;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.renderer.item.ItemModelResolver;
-import net.minecraft.client.renderer.item.ItemStackRenderState;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.component.ResolvableProfile;
-import net.minecraft.world.level.block.SkullBlock;
+import net.minecraft.block.SkullBlock;
+import net.minecraft.client.item.ItemModelManager;
+import net.minecraft.client.render.item.ItemRenderState;
+import net.minecraft.component.type.ProfileComponent;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.util.ActionResult;
 import org.jetbrains.annotations.Nullable;
 
 @Environment(EnvType.CLIENT)
@@ -57,7 +57,7 @@ public record HideArmourListener(HideArmour main) implements ClientPlayerEquipme
     }
 
     @Override
-    public @Nullable SkullBlock.Type onClientPlayerWornHeadTypeGet(@Nullable SkullBlock.Type originalType) {
+    public @Nullable SkullBlock.SkullType onClientPlayerWornHeadTypeGet(@Nullable SkullBlock.SkullType originalType) {
         if (this.main.config().enable() && this.main.config().headSkull()) {
             return null;
         }
@@ -65,7 +65,7 @@ public record HideArmourListener(HideArmour main) implements ClientPlayerEquipme
     }
 
     @Override
-    public @Nullable ResolvableProfile onClientPlayerWornHeadProfileGet(@Nullable ResolvableProfile originalProfile) {
+    public @Nullable ProfileComponent onClientPlayerWornHeadProfileGet(@Nullable ProfileComponent originalProfile) {
         if (this.main.config().enable() && this.main.config().headSkull()) {
             return null;
         }
@@ -73,10 +73,12 @@ public record HideArmourListener(HideArmour main) implements ClientPlayerEquipme
     }
 
     @Override
-    public InteractionResult onClientPlayerBlockHeadGet(ItemModelResolver itemModelResolver, ItemStackRenderState output, ItemStack item) {
+    public ActionResult onClientPlayerBlockHeadGet(ItemModelManager itemModelResolver, ItemRenderState output, ItemStack item) {
         if (this.main.config().enable() && this.main.config().headBlock()) {
-            return InteractionResult.FAIL;
+            return ActionResult.FAIL;
         }
-        return InteractionResult.PASS;
+        return ActionResult.PASS;
     }
 }
+
+

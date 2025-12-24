@@ -1,5 +1,5 @@
 plugins {
-	id("fabric-loom") version "1.14.8"
+	id("fabric-loom") version "1.14.10"
 }
 
 version = "${project.property("mod_version")}"
